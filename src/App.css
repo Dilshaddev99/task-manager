@@ -1,0 +1,172 @@
+.parent {
+  position: relative;
+  overflow-x: hidden;
+
+  .shape1 {
+    background-color: var(--special);
+    width: 100px;
+    height: 100px;
+    border-radius: 16%;
+    position: absolute;
+    z-index: -10;
+    top: 70%;
+    right: -30px;
+    rotate: 50deg;
+  }
+
+  .shape2 {
+    background-color: var(--special);
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    position: absolute;
+    z-index: -10;
+    top: 20%;
+    left: 19%;
+    rotate: 50deg;
+  }
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  max-width: 1300px;
+  margin: 0 auto;
+  min-height: 100vh;
+  gap: 40px;
+  padding: 100px 0;
+  position: relative;
+  z-index: 10;
+  background-color: var(--blurBackground);
+  /* filter: blur(4px); */
+  backdrop-filter: blur(70px);
+
+  .theme {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    cursor: pointer;
+  }
+
+  > h1 {
+    max-width: 700px;
+    font-size: 40px;
+    text-align: center;
+
+    > span {
+      color: var(--special);
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    .resultContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 13px;
+      /* max-width: 700px; */
+
+      > input {
+        width: 700px;
+        padding: 15px;
+        font-size: 22px;
+        outline: none;
+        border: 2px solid var(--special);
+        border-radius: 12px;
+      }
+
+      .icons {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .copyIcon {
+          cursor: pointer;
+          transition: all 0.2s linear;
+        }
+
+        .copyIcon:hover {
+          color: var(--special);
+          transition: all 0.2s ease;
+        }
+      }
+    }
+  }
+  .tasksContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    .todo {
+      max-width: 300px;
+      border: 2px solid var(--special);
+      padding: 15px;
+      border-radius: 22px;
+      text-align: center;
+      font-size: 18px;
+      overflow: hidden;
+
+      .actions {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+        gap: 10px;
+
+
+        .delete {
+          background-color: rgba(255, 0, 0, 0.68);
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 10px;
+          cursor: pointer;
+          border-radius: 12px;
+        }
+
+        .edit:hover {
+          background: rgba(1, 203, 132, 0.583);
+          transition: all 0.3s linear;
+        }
+
+        .delete:hover {
+          background-color: rgba(255, 0, 0, 0.577);
+          transition: all 0.3s linear;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  #resultInput {
+    width: 98% !important;
+    margin: 0 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 30px !important;
+  }
+
+  .resultContainer {
+    flex-direction: column;
+    gap: 25px !important;
+  }
+
+  .icons {
+    gap: 20px !important;
+  }
+}
